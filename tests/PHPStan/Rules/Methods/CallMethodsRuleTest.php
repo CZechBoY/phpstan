@@ -393,6 +393,14 @@ class CallMethodsRuleTest extends \PHPStan\Testing\RuleTestCase
 				'Call to an undefined method Test\CallAfterPropertyEmpty::doBar().',
 				1072,
 			],
+			[
+				'Result of method Test\DoFooOrStatement::returnsVoid() (void) is used.',
+				1109,
+			],
+			[
+				'Result of method Test\DoFooOrStatement::returnsVoid() (void) is used.',
+				1113,
+			],
 		]);
 	}
 
@@ -613,6 +621,14 @@ class CallMethodsRuleTest extends \PHPStan\Testing\RuleTestCase
 			[
 				'Call to an undefined method Test\CallAfterPropertyEmpty::doBar().',
 				1072,
+			],
+			[
+				'Result of method Test\DoFooOrStatement::returnsVoid() (void) is used.',
+				1109,
+			],
+			[
+				'Result of method Test\DoFooOrStatement::returnsVoid() (void) is used.',
+				1113,
 			],
 		]);
 	}

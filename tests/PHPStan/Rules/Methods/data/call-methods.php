@@ -1074,3 +1074,44 @@ class CallAfterPropertyEmpty
 	}
 
 }
+
+class DoFooOrStatement
+{
+
+	/**
+	 * @return bool
+	 */
+	private function returnsBool()
+	{
+		return false;
+	}
+
+	/**
+	 * @return void
+	 */
+	private function returnsVoid()
+	{
+
+	}
+
+	/**
+	 * @param bool $bool
+	 *
+	 * @return void
+	 */
+	private function takesBool($bool)
+	{
+
+	}
+
+	public function doFooOrOther()
+	{
+		if ($this->returnsBool() or $this->returnsVoid()) {
+			$this->returnsBool() or $this->returnsVoid();
+			$a = $this->returnsBool() or $this->returnsVoid();
+			$this->takesBool($this->returnsBool() or $this->returnsVoid());
+			($this->returnsBool() or $this->returnsVoid()) ? $this->returnsVoid() : $this->returnsBool();
+		}
+	}
+
+}
