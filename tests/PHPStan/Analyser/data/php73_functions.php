@@ -37,6 +37,9 @@ class Foo
 		$hrtime3 = hrtime(true);
 		$hrtime4 = hrtime($bool);
 
+		/** @var string[] $arrayWithStringValues */
+		$arrayWithStringValues = doBar();
+
 		die;
 	}
 

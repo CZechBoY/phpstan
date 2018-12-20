@@ -8329,6 +8329,54 @@ class NodeScopeResolverTest extends \PHPStan\Testing\TestCase
 				'array(int, int)|float|int',
 				'$hrtime4',
 			],
+			[
+				'int|string|null',
+				'array_value_first($mixedArray)',
+			],
+			[
+				'int|string|null',
+				'array_value_last($mixedArray)',
+			],
+			[
+				'int|string',
+				'array_value_first($nonEmptyArray)',
+			],
+			[
+				'int|string',
+				'array_value_last($nonEmptyArray)',
+			],
+			[
+				'string|null',
+				'array_value_first($arrayWithStringValues)',
+			],
+			[
+				'string|null',
+				'array_value_last($arrayWithStringValues)',
+			],
+			[
+				'null',
+				'array_value_first($emptyArray)',
+			],
+			[
+				'null',
+				'array_value_last($emptyArray)',
+			],
+			[
+				'0',
+				'array_value_first($literalArray)',
+			],
+			[
+				'2',
+				'array_value_last($literalArray)',
+			],
+			[
+				'0',
+				'array_value_first($anotherLiteralArray)',
+			],
+			[
+				'2|3',
+				'array_value_last($anotherLiteralArray)',
+			],
 		];
 	}
 
